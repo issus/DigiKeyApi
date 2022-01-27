@@ -31,7 +31,7 @@ namespace DigiKey.Api.Model
         /// <param name="taxonomyIds">A collection of Taxonomy Ids to filter on. Ids can be found in the initial search response. A a full list ids can be found from the Search Categories endpoint.</param>
         /// <param name="manufacturerIds">A collection of Manufacturer Ids to filter on. Ids can be found in the initial search response. A a full list ids can be found from the Search Manufactures endpoint.</param>
         /// <param name="parametricFilters">A collection of ParametricFilters. A ParametricFilter consists of a ParameterId and a ValueId. Those Ids can also be found in the Search response..</param>
-        public Filters(List<int?> taxonomyIds = default(List<int?>), List<int?> manufacturerIds = default(List<int?>), List<ParametricFilter> parametricFilters = default(List<ParametricFilter>))
+        public Filters(List<int> taxonomyIds = default(List<int>), List<int> manufacturerIds = default(List<int>), List<ParametricFilter> parametricFilters = default(List<ParametricFilter>))
         {
             this.TaxonomyIds = taxonomyIds;
             this.ManufacturerIds = manufacturerIds;
@@ -43,14 +43,14 @@ namespace DigiKey.Api.Model
         /// </summary>
         /// <value>A collection of Taxonomy Ids to filter on. Ids can be found in the initial search response. A a full list ids can be found from the Search Categories endpoint</value>
         [DataMember(Name = "TaxonomyIds", EmitDefaultValue = false)]
-        public List<int?> TaxonomyIds { get; set; }
+        public List<int> TaxonomyIds { get; set; }
 
         /// <summary>
         /// A collection of Manufacturer Ids to filter on. Ids can be found in the initial search response. A a full list ids can be found from the Search Manufactures endpoint
         /// </summary>
         /// <value>A collection of Manufacturer Ids to filter on. Ids can be found in the initial search response. A a full list ids can be found from the Search Manufactures endpoint</value>
         [DataMember(Name = "ManufacturerIds", EmitDefaultValue = false)]
-        public List<int?> ManufacturerIds { get; set; }
+        public List<int> ManufacturerIds { get; set; }
 
         /// <summary>
         /// A collection of ParametricFilters. A ParametricFilter consists of a ParameterId and a ValueId. Those Ids can also be found in the Search response.
