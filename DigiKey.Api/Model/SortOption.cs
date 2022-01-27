@@ -26,52 +26,52 @@ namespace DigiKey.Api.Model
     {
 
         /// <summary>
-        /// Enum NUMBER_SortByDigiKeyPartNumber for value: SortByDigiKeyPartNumber
+        /// Enum SortByDigiKeyPartNumber for value: SortByDigiKeyPartNumber
         /// </summary>
         [EnumMember(Value = "SortByDigiKeyPartNumber")]
-        NUMBER_SortByDigiKeyPartNumber = 1,
+        SortByDigiKeyPartNumber = 1,
 
         /// <summary>
-        /// Enum NUMBER_SortByManufacturerPartNumber for value: SortByManufacturerPartNumber
+        /// Enum SortByManufacturerPartNumber for value: SortByManufacturerPartNumber
         /// </summary>
         [EnumMember(Value = "SortByManufacturerPartNumber")]
-        NUMBER_SortByManufacturerPartNumber = 2,
+        SortByManufacturerPartNumber = 2,
 
         /// <summary>
-        /// Enum NUMBER_SortByDescription for value: SortByDescription
+        /// Enum SortByDescription for value: SortByDescription
         /// </summary>
         [EnumMember(Value = "SortByDescription")]
-        NUMBER_SortByDescription = 3,
+        SortByDescription = 3,
 
         /// <summary>
-        /// Enum NUMBER_SortByManufacturer for value: SortByManufacturer
+        /// Enum SortByManufacturer for value: SortByManufacturer
         /// </summary>
         [EnumMember(Value = "SortByManufacturer")]
-        NUMBER_SortByManufacturer = 4,
+        SortByManufacturer = 4,
 
         /// <summary>
-        /// Enum NUMBER_SortByMinimumOrderQuantity for value: SortByMinimumOrderQuantity
+        /// Enum SortByMinimumOrderQuantity for value: SortByMinimumOrderQuantity
         /// </summary>
         [EnumMember(Value = "SortByMinimumOrderQuantity")]
-        NUMBER_SortByMinimumOrderQuantity = 5,
+        SortByMinimumOrderQuantity = 5,
 
         /// <summary>
-        /// Enum NUMBER_SortByQuantityAvailable for value: SortByQuantityAvailable
+        /// Enum SortByQuantityAvailable for value: SortByQuantityAvailable
         /// </summary>
         [EnumMember(Value = "SortByQuantityAvailable")]
-        NUMBER_SortByQuantityAvailable = 6,
+        SortByQuantityAvailable = 6,
 
         /// <summary>
-        /// Enum NUMBER_SortByUnitPrice for value: SortByUnitPrice
+        /// Enum SortByUnitPrice for value: SortByUnitPrice
         /// </summary>
         [EnumMember(Value = "SortByUnitPrice")]
-        NUMBER_SortByUnitPrice = 7,
+        SortByUnitPrice = 7,
 
         /// <summary>
-        /// Enum NUMBER_SortByParameter for value: SortByParameter
+        /// Enum SortByParameter for value: SortByParameter
         /// </summary>
         [EnumMember(Value = "SortByParameter")]
-        NUMBER_SortByParameter = 8
+        SortByParameter = 8
     }
 
 }

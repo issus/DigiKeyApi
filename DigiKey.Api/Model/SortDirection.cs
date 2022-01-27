@@ -26,16 +26,16 @@ namespace DigiKey.Api.Model
     {
 
         /// <summary>
-        /// Enum NUMBER_Ascending for value: Ascending
+        /// Enum Ascending for value: Ascending
         /// </summary>
         [EnumMember(Value = "Ascending")]
-        NUMBER_Ascending = 1,
+        Ascending = 1,
 
         /// <summary>
-        /// Enum NUMBER_Descending for value: Descending
+        /// Enum Descending for value: Descending
         /// </summary>
         [EnumMember(Value = "Descending")]
-        NUMBER_Descending = 2
+        Descending = 2
     }
 
 }

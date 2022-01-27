@@ -26,58 +26,58 @@ namespace DigiKey.Api.Model
     {
 
         /// <summary>
-        /// Enum NUMBER_ManufacturerPartSearch for value: ManufacturerPartSearch
+        /// Enum ManufacturerPartSearch for value: ManufacturerPartSearch
         /// </summary>
         [EnumMember(Value = "ManufacturerPartSearch")]
-        NUMBER_ManufacturerPartSearch = 1,
+        ManufacturerPartSearch = 1,
 
         /// <summary>
-        /// Enum NUMBER_InStock for value: InStock
+        /// Enum InStock for value: InStock
         /// </summary>
         [EnumMember(Value = "InStock")]
-        NUMBER_InStock = 2,
+        InStock = 2,
 
         /// <summary>
-        /// Enum NUMBER_NewProductsOnly for value: NewProductsOnly
+        /// Enum NewProductsOnly for value: NewProductsOnly
         /// </summary>
         [EnumMember(Value = "NewProductsOnly")]
-        NUMBER_NewProductsOnly = 3,
+        NewProductsOnly = 3,
 
         /// <summary>
-        /// Enum NUMBER_RoHSCompliant for value: RoHSCompliant
+        /// Enum RoHSCompliant for value: RoHSCompliant
         /// </summary>
         [EnumMember(Value = "RoHSCompliant")]
-        NUMBER_RoHSCompliant = 4,
+        RoHSCompliant = 4,
 
         /// <summary>
-        /// Enum NUMBER_LeadFree for value: LeadFree
+        /// Enum LeadFree for value: LeadFree
         /// </summary>
         [EnumMember(Value = "LeadFree")]
-        NUMBER_LeadFree = 5,
+        LeadFree = 5,
 
         /// <summary>
-        /// Enum NUMBER_CollapsePackagingTypes for value: CollapsePackagingTypes
+        /// Enum CollapsePackagingTypes for value: CollapsePackagingTypes
         /// </summary>
         [EnumMember(Value = "CollapsePackagingTypes")]
-        NUMBER_CollapsePackagingTypes = 6,
+        CollapsePackagingTypes = 6,
 
         /// <summary>
-        /// Enum NUMBER_ExcludeNonStock for value: ExcludeNonStock
+        /// Enum ExcludeNonStock for value: ExcludeNonStock
         /// </summary>
         [EnumMember(Value = "ExcludeNonStock")]
-        NUMBER_ExcludeNonStock = 7,
+        ExcludeNonStock = 7,
 
         /// <summary>
-        /// Enum NUMBER_Has3DModel for value: Has3DModel
+        /// Enum Has3DModel for value: Has3DModel
         /// </summary>
         [EnumMember(Value = "Has3DModel")]
-        NUMBER_Has3DModel = 8,
+        Has3DModel = 8,
 
         /// <summary>
-        /// Enum NUMBER_HasMentorFootprint for value: HasMentorFootprint
+        /// Enum HasMentorFootprint for value: HasMentorFootprint
         /// </summary>
         [EnumMember(Value = "HasMentorFootprint")]
-        NUMBER_HasMentorFootprint = 9
+        HasMentorFootprint = 9
     }
 
 }
