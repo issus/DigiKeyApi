@@ -133,7 +133,7 @@ namespace DigiKey.Api.Client
 
             if (postBody != null) // http body(model or byte[]) parameter
             {
-                request.AddParameter(contentType, postBody, ParameterType.RequestBody);
+                request.AddJsonBody(postBody);
             }
 
             request.AddHeader("Authorization", "Bearer " + ParameterToString(ApiClientConfig.Instance.AccessToken));
@@ -142,6 +142,8 @@ namespace DigiKey.Api.Client
             if (LocaleLanguage.HasValue) request.AddHeader("X-DIGIKEY-Locale-Language", ParameterToString(LocaleSite));
             if (LocaleCurrency.HasValue) request.AddHeader("X-DIGIKEY-Locale-Currency", ParameterToString(LocaleSite));
             if (!string.IsNullOrEmpty(CustomerId)) request.AddHeader("X-DIGIKEY-Customer-Id", ParameterToString(CustomerId));
+
+            request.AddHeader("Content-Type", "application/json");
 
             // set user agent
             RestClientOptions.UserAgent = "github.com/issus/DigiKey.Api/1.0.0";

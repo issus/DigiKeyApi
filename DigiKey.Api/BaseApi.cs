@@ -49,7 +49,7 @@ namespace DigiKey.Api
 
             // make the HTTP request
             return await ApiClient.Instance.CallApi(path,
-                Method.Post, queryParams, ApiClient.Serialize(body), headerParams, pathParams);
+                Method.Post, queryParams, body, headerParams, pathParams);
         }
     }
 }
