@@ -133,7 +133,13 @@ namespace DigiKey.Api.Client
 
             if (postBody != null) // http body(model or byte[]) parameter
             {
-                request.AddJsonBody(postBody);
+                //request.AddJsonBody(postBody);
+                var jsonSettings = new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.None,
+                    NullValueHandling = NullValueHandling.Ignore
+                };
+                request.AddStringBody(JsonConvert.SerializeObject(postBody, jsonSettings), DataFormat.Json);
             }
 
             request.AddHeader("Authorization", "Bearer " + ParameterToString(ApiClientConfig.Instance.AccessToken));
@@ -147,6 +153,8 @@ namespace DigiKey.Api.Client
 
             // set user agent
             RestClientOptions.UserAgent = "github.com/issus/DigiKey.Api/1.0.0";
+            
+            
 
             InterceptRequest(request);
             var response = await RestClient.ExecuteAsync(request);
