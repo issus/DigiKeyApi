@@ -1,0 +1,47 @@
+# IO.Swagger.Model.Product
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**StandardPricing** | [**List&lt;PriceBreak&gt;**](PriceBreak.md) | Standard pricing for the validated locale. | [optional] 
+**RoHSStatus** | **string** | RoHS status. Can be: RoHS Compliant, RoHS non-compliant, RoHS Compliant By Exemption, Not Applicable, Vendor  undefined, Request Inventory Verification, ROHS3 Compliant. | [optional] 
+**LeadStatus** | **string** | Lead status. Can be: Lead Free, Contains lead, Lead Free By Exemption, Not Applicable, Vendor undefined, unknown,  or Request Inventory Verification. | [optional] 
+**Parameters** | [**List&lt;PidVid&gt;**](PidVid.md) | Parameters for the part. Can be used for filtering keyword searches. | [optional] 
+**ProductUrl** | **string** | Full URL of the Digi-Key catalog page to purchase the product. This is based on your provided Locale values. | [optional] 
+**PrimaryDatasheet** | **string** | The URL to the product&#39;s datasheet. | [optional] 
+**PrimaryPhoto** | **string** | The URL to the product&#39;s image. | [optional] 
+**PrimaryVideo** | **string** | The URL to the product&#39;s video. | [optional] 
+**Series** | [**PidVid**](PidVid.md) |  | [optional] 
+**ManufacturerLeadWeeks** | **string** | The number of weeks expected to receive stock from manufacturer. | [optional] 
+**ManufacturerPageUrl** | **string** | The URL to Digi-Key&#39;s page on the manufacturer. | [optional] 
+**ProductStatus** | **string** | Status of the product. Options include: Active, Obsolete, Discontinued at Digi-Key, Last Time Buy, Not For New  Designs, Preliminary. For obsolete parts the part will become a non-stocking item when stock is depleted; minimums  will apply. Order the quantity available or the quantity available plus a multiple of the minimum order quantity. | [optional] 
+**DateLastBuyChance** | **DateTime?** | Last date that the product will be available for purchase. Date is in ISO 8601. | [optional] 
+**AlternatePackaging** | [**List&lt;BasicProduct&gt;**](BasicProduct.md) | Other packaging types available for this product. | [optional] 
+**DetailedDescription** | **string** | Extended catalog description of the product. | [optional] 
+**ReachStatus** | **string** | REACH is a regulation of the European Union. See documentation from the European Chemicals Agency. | [optional] 
+**ExportControlClassNumber** | **string** | Export control class number. See documentation from the U.S. Department of Commerce. | [optional] 
+**HTSUSCode** | **string** | Harmonized Tariff Schedule of the United States. See documentation from the U.S. International Trade Commission. | [optional] 
+**TariffDescription** | **string** | Description of the tariff status. Only applies if purchasing in USD and shipping to the US. Valid options are No  Tariff and Tariff Applied. | [optional] 
+**MoistureSensitivityLevel** | **string** | Code for Moisture Sensitivity Level of the product | [optional] 
+**Family** | [**PidVid**](PidVid.md) |  | [optional] 
+**Category** | [**PidVid**](PidVid.md) |  | [optional] 
+**ManufacturerPartNumber** | **string** | The manufacturer part number. Note that some manufacturer part numbers may be used by multiple manufacturers for  different parts. | [optional] 
+**MinimumOrderQuantity** | **int?** | The minimum quantity to order from Digi-Key. | [optional] 
+**NonStock** | **bool?** | Indicates this product is a non stock product. | [optional] 
+**Packaging** | [**PidVid**](PidVid.md) |  | [optional] 
+**QuantityAvailable** | **int?** | Quantity of the product available for immediate sale. | [optional] 
+**DigiKeyPartNumber** | **string** | The Digi-Key part number. | [optional] 
+**ProductDescription** | **string** | Catalog description of the product. | [optional] 
+**UnitPrice** | **double?** | The price for a single unit of this product. | [optional] 
+**Manufacturer** | [**PidVid**](PidVid.md) |  | [optional] 
+**ManufacturerPublicQuantity** | **int?** | Quantity of this product available to order from manufacturer. | [optional] 
+**QuantityOnOrder** | **int?** | Quantity of this product ordered but not immediately available. | [optional] 
+**DKPlusRestriction** | **bool?** | If true- this product is not available for purchase through the Ordering API - it must be purchased through the  Digi-Key web site | [optional] 
+**Marketplace** | **bool?** | Product is a Marketplace product that ships direct from the supplier.  A separate shipping fee may apply | [optional] 
+**SupplierDirectShip** | **bool?** | If true- this product is shipped directly from the Supplier | [optional] 
+**PimProductName** | **string** | Pim name for the product | [optional] 
+**Supplier** | **string** | The Supplier is the provider of the products to Digi-Key and some cases the customer directly. | [optional] 
+**SupplierId** | **int?** | Id for Supplier | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
