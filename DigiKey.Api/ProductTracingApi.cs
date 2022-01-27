@@ -13,17 +13,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
+using System.Threading.Tasks;
 
-namespace IO.Swagger.Api
+namespace DigiKey.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IProductTracingApi : IApiAccessor
+    public interface IProductTracingApi
     {
-        #region Synchronous Operations
         /// <summary>
         /// Retrieve detailed information about the product being traced
         /// </summary>
@@ -32,40 +32,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
-        /// <returns>ProductTracingResponse</returns>
-        ProductTracingResponse Details (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null);
-
-        /// <summary>
-        /// Retrieve detailed information about the product being traced
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
-        /// <returns>ApiResponse of ProductTracingResponse</returns>
-        ApiResponse<ProductTracingResponse> DetailsWithHttpInfo (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null);
-        #endregion Synchronous Operations
-        #region Asynchronous Operations
-        /// <summary>
-        /// Retrieve detailed information about the product being traced
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
         /// <returns>Task of ProductTracingResponse</returns>
-        System.Threading.Tasks.Task<ProductTracingResponse> DetailsAsync (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null);
+        Task<ProductTracingResponse> Details(string tracingId);
 
         /// <summary>
         /// Retrieve detailed information about the product being traced
@@ -75,109 +43,21 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTracingResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductTracingResponse>> DetailsAsyncWithHttpInfo (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null);
-        #endregion Asynchronous Operations
+        Task<ApiResponse<ProductTracingResponse>> DetailsWithHttpInfo(string tracingId);
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ProductTracingApi : IProductTracingApi
+    public partial class ProductTracingApi : BaseApi, IProductTracingApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTracingApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ProductTracingApi(String basePath)
+        public ProductTracingApi()
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
-
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProductTracingApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public ProductTracingApi(IO.Swagger.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
-
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-        }
-
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
-        {
-            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
-        }
-
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
-        {
-            // do nothing
-        }
-
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Provides a factory method hook for the creation of exceptions.
-        /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
-        {
-            get
-            {
-                if (_exceptionFactory != null && _exceptionFactory.GetInvocationList().Length > 1)
-                {
-                    throw new InvalidOperationException("Multicast delegate for ExceptionFactory is unsupported.");
-                }
-                return _exceptionFactory;
-            }
-            set { _exceptionFactory = value; }
-        }
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
-        public IDictionary<String, String> DefaultHeader()
-        {
-            return new ReadOnlyDictionary<string, string>(this.Configuration.DefaultHeader);
-        }
-
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
         }
 
         /// <summary>
@@ -185,105 +65,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
-        /// <returns>ProductTracingResponse</returns>
-        public ProductTracingResponse Details (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null)
-        {
-             ApiResponse<ProductTracingResponse> localVarResponse = DetailsWithHttpInfo(tracingId, authorization, xDIGIKEYClientId, xDIGIKEYCustomerId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Retrieve detailed information about the product being traced 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
-        /// <returns>ApiResponse of ProductTracingResponse</returns>
-        public ApiResponse< ProductTracingResponse > DetailsWithHttpInfo (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null)
-        {
-            // verify the required parameter 'tracingId' is set
-            if (tracingId == null)
-                throw new ApiException(400, "Missing required parameter 'tracingId' when calling ProductTracingApi->Details");
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductTracingApi->Details");
-            // verify the required parameter 'xDIGIKEYClientId' is set
-            if (xDIGIKEYClientId == null)
-                throw new ApiException(400, "Missing required parameter 'xDIGIKEYClientId' when calling ProductTracingApi->Details");
-
-            var localVarPath = "/Details/{tracingId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (tracingId != null) localVarPathParams.Add("tracingId", this.Configuration.ApiClient.ParameterToString(tracingId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", this.Configuration.ApiClient.ParameterToString(authorization)); // header parameter
-            if (xDIGIKEYClientId != null) localVarHeaderParams.Add("X-DIGIKEY-Client-Id", this.Configuration.ApiClient.ParameterToString(xDIGIKEYClientId)); // header parameter
-            if (xDIGIKEYCustomerId != null) localVarHeaderParams.Add("X-DIGIKEY-Customer-Id", this.Configuration.ApiClient.ParameterToString(xDIGIKEYCustomerId)); // header parameter
-
-            // authentication (apiKeySecurity) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-DIGIKEY-Client-Id")))
-            {
-                localVarHeaderParams["X-DIGIKEY-Client-Id"] = this.Configuration.GetApiKeyWithPrefix("X-DIGIKEY-Client-Id");
-            }
-            // authentication (oauth2AccessCodeSecurity) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Details", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<ProductTracingResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTracingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTracingResponse)));
-        }
-
-        /// <summary>
-        /// Retrieve detailed information about the product being traced 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
         /// <returns>Task of ProductTracingResponse</returns>
-        public async System.Threading.Tasks.Task<ProductTracingResponse> DetailsAsync (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null)
+        public async Task<ProductTracingResponse> Details(string tracingId)
         {
-             ApiResponse<ProductTracingResponse> localVarResponse = await DetailsAsyncWithHttpInfo(tracingId, authorization, xDIGIKEYClientId, xDIGIKEYCustomerId);
+             ApiResponse<ProductTracingResponse> localVarResponse = await DetailsWithHttpInfo(tracingId);
              return localVarResponse.Data;
 
         }
@@ -293,76 +78,27 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tracingId">The tracing Id of the product being traced</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them. (optional)</param>
         /// <returns>Task of ApiResponse (ProductTracingResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductTracingResponse>> DetailsAsyncWithHttpInfo (string tracingId, string authorization, string xDIGIKEYClientId, string xDIGIKEYCustomerId = null)
+        public async Task<ApiResponse<ProductTracingResponse>> DetailsWithHttpInfo(string tracingId)
         {
             // verify the required parameter 'tracingId' is set
             if (tracingId == null)
                 throw new ApiException(400, "Missing required parameter 'tracingId' when calling ProductTracingApi->Details");
-            // verify the required parameter 'authorization' is set
-            if (authorization == null)
-                throw new ApiException(400, "Missing required parameter 'authorization' when calling ProductTracingApi->Details");
-            // verify the required parameter 'xDIGIKEYClientId' is set
-            if (xDIGIKEYClientId == null)
-                throw new ApiException(400, "Missing required parameter 'xDIGIKEYClientId' when calling ProductTracingApi->Details");
+            
+            var path = $"/Details/{tracingId}";
 
-            var localVarPath = "/Details/{tracingId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+            RestResponse response = await MakeGetRequest(path);
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            int statusCode = (int)response.StatusCode;
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (tracingId != null) localVarPathParams.Add("tracingId", this.Configuration.ApiClient.ParameterToString(tracingId)); // path parameter
-            if (authorization != null) localVarHeaderParams.Add("Authorization", this.Configuration.ApiClient.ParameterToString(authorization)); // header parameter
-            if (xDIGIKEYClientId != null) localVarHeaderParams.Add("X-DIGIKEY-Client-Id", this.Configuration.ApiClient.ParameterToString(xDIGIKEYClientId)); // header parameter
-            if (xDIGIKEYCustomerId != null) localVarHeaderParams.Add("X-DIGIKEY-Customer-Id", this.Configuration.ApiClient.ParameterToString(xDIGIKEYCustomerId)); // header parameter
-
-            // authentication (apiKeySecurity) required
-            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-DIGIKEY-Client-Id")))
+            if (ApiClient.ExceptionFactory != null)
             {
-                localVarHeaderParams["X-DIGIKEY-Client-Id"] = this.Configuration.GetApiKeyWithPrefix("X-DIGIKEY-Client-Id");
-            }
-            // authentication (oauth2AccessCodeSecurity) required
-            // oauth required
-            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("Details", localVarResponse);
+                Exception exception = ApiClient.ExceptionFactory("Details", response);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ProductTracingResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (ProductTracingResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductTracingResponse)));
+            return new ApiResponse<ProductTracingResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+               ApiClient.Instance.Deserialize<ProductTracingResponse>(response));
         }
 
     }
