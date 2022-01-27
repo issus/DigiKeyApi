@@ -70,12 +70,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>Category</returns>
         public async Task<Category> CategoriesById(int? categoryId)
         {
@@ -88,12 +82,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of Category</returns>
         public async Task<ApiResponse<Category>> CategoriesByIdWithHttpInfo(int? categoryId)
         {
@@ -122,13 +110,6 @@ namespace DigiKey.Api
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;ExtendedPrice,ReelingFee\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>DigiReelPricingDto</returns>
         public async Task<DigiReelPricingDto> DigiReelPricing(string digiKeyPartNumber, int? requestedQuantity)
         {
@@ -142,13 +123,6 @@ namespace DigiKey.Api
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;ExtendedPrice,ReelingFee\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of DigiReelPricingDto</returns>
         public async Task<ApiResponse<DigiReelPricingDto>> DigiReelPricingWithHttpInfo(string digiKeyPartNumber, int? requestedQuantity)
         {
@@ -183,13 +157,6 @@ namespace DigiKey.Api
         /// KeywordSearch can search for any product in the Digi-Key catalog. 
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">(optional)</param>
         /// <returns>KeywordSearchResponse</returns>
         public async Task<KeywordSearchResponse> KeywordSearch(KeywordSearchRequest body = null)
@@ -236,13 +203,6 @@ namespace DigiKey.Api
         /// Create list of ProductDetails from the matches of the requested manufacturer product name. 
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;Products(DigiKeyPartNumber,QuantityAvailable)\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ProductDetailsResponse</returns>
         public async Task<ProductDetailsResponse> ManufacturerProductDetails(ManufacturerProductDetailsRequest body = null)
@@ -255,13 +215,6 @@ namespace DigiKey.Api
         /// Create list of ProductDetails from the matches of the requested manufacturer product name. 
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;Products(DigiKeyPartNumber,QuantityAvailable)\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ApiResponse of ProductDetailsResponse</returns>
         public async Task<ApiResponse<ProductDetailsResponse>> ManufacturerProductDetailsWithHttpInfo(ManufacturerProductDetailsRequest body = null)
@@ -289,12 +242,6 @@ namespace DigiKey.Api
         /// Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchRequest.Filters.ManufacturerIds to restrict a keyword search to a given Manufacturer 
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ManufacturersResponse</returns>
         public async Task<ManufacturersResponse> Manufacturers()
         {
@@ -306,12 +253,6 @@ namespace DigiKey.Api
         /// Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchRequest.Filters.ManufacturerIds to restrict a keyword search to a given Manufacturer 
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ManufacturersResponse</returns>
         public async Task<ApiResponse<ManufacturersResponse>> ManufacturersWithHttpInfo()
         {
@@ -335,13 +276,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ProductDetails</returns>
         public async Task<ProductDetails> ProductDetails(string digiKeyPartNumber)
         {
@@ -354,13 +288,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ProductDetails</returns>
         public async Task<ApiResponse<ProductDetails>> ProductDetailsWithHttpInfo(string digiKeyPartNumber)
         {
@@ -388,12 +315,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ProductWithSuggestions</returns>
         public async Task<ProductWithSuggestions> SuggestedParts(string partNumber)
         {
@@ -406,12 +327,6 @@ namespace DigiKey.Api
         /// </summary>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ProductWithSuggestions</returns>
         public async Task<ApiResponse<ProductWithSuggestions>> SuggestedPartsWithHttpInfo(string partNumber)
         {
@@ -447,12 +362,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>CategoriesResponse</returns>
         Task<CategoriesResponse> Categories();
 
@@ -463,12 +372,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of CategoriesResponse</returns>
         Task<ApiResponse<CategoriesResponse>> CategoriesWithHttpInfo();
         /// <summary>
@@ -479,12 +382,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>Category</returns>
         Task<Category> CategoriesById(int? categoryId);
 
@@ -496,12 +393,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of Category</returns>
         Task<ApiResponse<Category>> CategoriesByIdWithHttpInfo(int? categoryId);
         /// <summary>
@@ -513,13 +404,6 @@ namespace DigiKey.Api
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;ExtendedPrice,ReelingFee\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>DigiReelPricingDto</returns>
         Task<DigiReelPricingDto> DigiReelPricing(string digiKeyPartNumber, int? requestedQuantity);
 
@@ -532,13 +416,6 @@ namespace DigiKey.Api
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;ExtendedPrice,ReelingFee\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of DigiReelPricingDto</returns>
         Task<ApiResponse<DigiReelPricingDto>> DigiReelPricingWithHttpInfo(string digiKeyPartNumber, int? requestedQuantity);
         /// <summary>
@@ -548,13 +425,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">(optional)</param>
         /// <returns>KeywordSearchResponse</returns>
         Task<KeywordSearchResponse> KeywordSearch(KeywordSearchRequest body = null);
@@ -566,13 +436,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">(optional)</param>
         /// <returns>ApiResponse of KeywordSearchResponse</returns>
         Task<ApiResponse<KeywordSearchResponse>> KeywordSearchWithHttpInfo(KeywordSearchRequest body = null);
@@ -583,13 +446,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;Products(DigiKeyPartNumber,QuantityAvailable)\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ProductDetailsResponse</returns>
         Task<ProductDetailsResponse> ManufacturerProductDetails(ManufacturerProductDetailsRequest body = null);
@@ -601,13 +457,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;Products(DigiKeyPartNumber,QuantityAvailable)\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ApiResponse of ProductDetailsResponse</returns>
         Task<ApiResponse<ProductDetailsResponse>> ManufacturerProductDetailsWithHttpInfo(ManufacturerProductDetailsRequest body = null);
@@ -618,12 +467,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ManufacturersResponse</returns>
         Task<ManufacturersResponse> Manufacturers();
 
@@ -634,12 +477,6 @@ namespace DigiKey.Api
         /// 
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ManufacturersResponse</returns>
         Task<ApiResponse<ManufacturersResponse>> ManufacturersWithHttpInfo();
         /// <summary>
@@ -650,13 +487,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ProductDetails</returns>
         Task<ProductDetails> ProductDetails(string digiKeyPartNumber);
 
@@ -668,13 +498,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="includes">Comma separated list of fields to return. Used to customize response to reduce bandwidth by  selecting fields that you wish to receive. For example: \&quot;DigiKeyPartNumber,QuantityAvailable,AssociatedProducts[2]\&quot;(optional)</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ProductDetails</returns>
         Task<ApiResponse<ProductDetails>> ProductDetailsWithHttpInfo(string digiKeyPartNumber);
         /// <summary>
@@ -685,12 +508,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ProductWithSuggestions</returns>
         Task<ProductWithSuggestions> SuggestedParts(string partNumber);
 
@@ -702,12 +519,6 @@ namespace DigiKey.Api
         /// </remarks>
         /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
-        /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
-        /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
-        /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
-        /// <param name="xDIGIKEYLocaleLanguage">Two letter code for language to search on. Langauge must be supported by the selected site. If searching on keyword, this language is used to find matches. Acceptable values include: en, ja, de, fr, ko, zhs, zht, it, es, he, nl, sv, pl, fi, da, no.(optional)</param>
-        /// <param name="xDIGIKEYLocaleCurrency">Three letter code for Currency to return part pricing for. Currency must be supported by the selected site. Acceptable values include: USD, CAD, JPY, GBP, EUR, HKD, SGD, TWD, KRW, AUD, NZD, INR, DKK, NOK, SEK, ILS, CNY, PLN, CHF, CZK, HUF, RON, ZAR, MYR, THB, PHP.(optional)</param>
-        /// <param name="xDIGIKEYCustomerId">Your Digi-Key Customer id. If your account has multiple Customer Ids for different regions, this allows you to select one of them.(optional)</param>
         /// <returns>ApiResponse of ProductWithSuggestions</returns>
         Task<ApiResponse<ProductWithSuggestions>> SuggestedPartsWithHttpInfo(string partNumber);
     }
