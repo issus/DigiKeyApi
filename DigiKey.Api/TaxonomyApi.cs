@@ -2,6 +2,7 @@
 using DigiKey.Api.Client;
 using RestSharp;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace DigiKey.Api
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <returns>string</returns>
-        Task<string> TaxonomySearch(string category);
+        Task<string> TaxonomySearch(string category, Dictionary<string, string> filters);
 
         /// <summary>
         /// Retrieves a URL to a filtered partsearch page. Any filter names and values may be used as query parameters as long as it exists for the category. For example: \&quot;color&#x3D;black\&quot;. However, these cannot be entered on the Swagger page.
@@ -36,7 +37,7 @@ namespace DigiKey.Api
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <returns>ApiResponse of string</returns>
-        Task<ApiResponse<string>> TaxonomySearchWithHttpInfo(string category);
+        Task<ApiResponse<string>> TaxonomySearchWithHttpInfo(string category, Dictionary<string, string> filters);
     }
 
     /// <summary>
@@ -60,9 +61,9 @@ namespace DigiKey.Api
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <returns>string</returns>
-        public async Task<string> TaxonomySearch(string category)
+        public async Task<string> TaxonomySearch(string category, Dictionary<string, string> filters = null)
         {
-            ApiResponse<string> localVarResponse = await TaxonomySearchWithHttpInfo(category);
+            ApiResponse<string> localVarResponse = await TaxonomySearchWithHttpInfo(category, filters);
             return localVarResponse.Data;
         }
 
@@ -74,14 +75,22 @@ namespace DigiKey.Api
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <returns>ApiResponse of string</returns>
-        public async Task<ApiResponse<string>> TaxonomySearchWithHttpInfo(string category)
+        public async Task<ApiResponse<string>> TaxonomySearchWithHttpInfo(string category, Dictionary<string, string> filters = null)
         {
             // verify the required parameter 'category' is set
             if (category == null)
                 throw new ApiException(400, "Missing required parameter 'category' when calling TaxonomyApi->TaxonomySearch");
 
             var path = "/taxonomysearch/v3/{category}";
-            RestResponse response = await MakeGetRequest(path);
+
+            var queryParams = new List<KeyValuePair<string, string>>();
+
+            if (filters != null && filters.Any())
+            {
+                queryParams = filters.ToList();
+            }
+
+            RestResponse response = await MakeGetRequest(path, queryParams: queryParams);
 
             int statusCode = (int)response.StatusCode;
 
