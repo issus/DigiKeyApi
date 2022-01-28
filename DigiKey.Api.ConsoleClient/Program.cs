@@ -34,11 +34,19 @@ namespace DigiKey.Api.ConsoleClient
             //await Manufacturers();
             //await ProductDetails();
             //await SuggestedParts();
+            //await Taxonomy();
 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press [Any Key] to exit...");
             Console.ReadKey();
+        }
+
+        private static async Task Taxonomy()
+        {
+            var taxonomy = new TaxonomyApi();
+            var result = await taxonomy.TaxonomySearch("60");
+            Console.WriteLine($"Category URL: {result}");
         }
 
         private static async Task SuggestedParts()
@@ -107,6 +115,7 @@ namespace DigiKey.Api.ConsoleClient
 
             var results = await partSearch.KeywordSearch(new KeywordSearchRequest()
             {
+                Keywords = "",
                 RecordCount = 50,
                 RecordStartPosition = 0,
                 ExcludeMarketPlaceProducts = true,
