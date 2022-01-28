@@ -33,6 +33,30 @@ namespace DigiKey.Api.Client
         public LocaleCurrency? LocaleCurrency { get; set; }
         public string CustomerId { get; set; }
 
+        /// <summary>
+        /// Number of requests the ApiClient has made since instantiation. 
+        /// </summary>
+        public int RequestCount { get; set; }
+
+        /// <summary>
+        /// The maximum number of requests that the consumer is permitted to make per day. Updated after each request.
+        /// </summary>
+        public int? RateLimit { get; set; }
+        /// <summary>
+        /// The number of requests remaining in the current rate limit window. Updated after each request.
+        /// </summary>
+        public int? RateLimitRemaining { get; set; }
+
+        /// <summary>
+        /// Set after a response with headers indicating the daily limit has been exceeded. Most likely a 429 response. Cleared after a successful call.
+        /// </summary>
+        public RateLimit RateLimited { get; set; }
+
+        /// <summary>
+        /// Set after a response with headers indicating the bust limit has been exceeded. Most likely a 429 response. Cleared after a successful call.
+        /// </summary>
+        public RateLimit BurstLimited { get; set; }
+
         private JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
@@ -61,6 +85,8 @@ namespace DigiKey.Api.Client
             RestClientOptions = new RestClientOptions(ApiClientConfig.Instance.BaseAddress) { };
 
             RestClient = new RestClient(RestClientOptions);
+
+            RequestCount = 0;
         }
 
         /// <summary>
@@ -153,12 +179,59 @@ namespace DigiKey.Api.Client
 
             // set user agent
             RestClientOptions.UserAgent = "github.com/issus/DigiKey.Api/1.0.0";
-            
-            
+
+            RequestCount++;
 
             InterceptRequest(request);
             var response = await RestClient.ExecuteAsync(request);
             InterceptResponse(request, response);
+
+            try
+            {
+                int rateLimit = -1;
+                int rateRemaining = -1;
+
+                var rateLimitHeader = response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-Limit");
+                if (rateLimitHeader != null)
+                {
+                    if (Int32.TryParse((string)rateLimitHeader.Value, out rateLimit)) RateLimit = rateLimit;
+                }
+
+                var rateRemainingHeader = response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-Remaining");
+                if (rateRemainingHeader != null)
+                {
+                    if (Int32.TryParse((string)rateRemainingHeader.Value, out rateRemaining)) RateLimitRemaining = rateRemaining;
+                }
+
+                if (response.Headers.Any(h => h.Name == "X-RateLimit-Reset"))
+                {
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "Retry-After").Value, out int retryAfter);
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-Reset").Value, out int rlReset);
+                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-ResetTime").Value, out DateTime rlResetTime);
+
+                    RateLimited = new RateLimit(retryAfter, rateLimit, rateRemaining, rlReset, rlResetTime);
+                }
+                else
+                {
+                    RateLimited = null;
+                }
+
+                if (response.Headers.Any(h => h.Name == "X-BurstLimit-Reset"))
+                {
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "Retry-After").Value, out int retryAfter);
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Limit").Value, out int blLimit);
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Remaining").Value, out int blRemaining);
+                    Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Reset").Value, out int rlReset);
+                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-ResetTime").Value, out DateTime rlResetTime);
+
+                    BurstLimited = new RateLimit(retryAfter, blLimit, blRemaining, rlReset, rlResetTime);
+                }
+                else
+                {
+                    BurstLimited = null;
+                }
+            }
+            finally { }
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
