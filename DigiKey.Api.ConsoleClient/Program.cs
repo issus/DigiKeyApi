@@ -4,6 +4,8 @@ using DigiKey.Api.OAuth2;
 using System;
 using System.Threading.Tasks;
 using System.Linq;
+using DigiKey.Api.Model;
+using System.Collections.Generic;
 
 namespace DigiKey.Api.ConsoleClient
 {
@@ -27,14 +29,102 @@ namespace DigiKey.Api.ConsoleClient
                 }
             }
 
-            await Categories();
-
-
+            //await Categories();
+            await KeywordSearch();
+            //await Manufacturers();
+            //await ProductDetails();
+            //await SuggestedParts();
 
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Press [Any Key] to exit...");
             Console.ReadKey();
+        }
+
+        private static async Task SuggestedParts()
+        {
+            var partSearch = new PartSearchApi();
+            var results = await partSearch.SuggestedParts("478-1114-1-ND");
+
+            Console.WriteLine("╔══[SUGGESTED PARTS]══════════════════════════════════");
+            Console.WriteLine($"║  FOR: {results.Product.Manufacturer.Value} {results.Product.ManufacturerPartNumber} [{results.Product.DigiKeyPartNumber}]");
+            Console.WriteLine("║");
+
+            foreach (var product in results.SuggestedProducts)
+            {
+                Console.WriteLine($"╠═══[{product.DigiKeyPartNumber}] {product.Manufacturer.Value.ToUpper()} - {product.ManufacturerPartNumber}]═════════════════");
+                Console.WriteLine($"║ ├─[DESC] {product.ProductDescription}");
+                Console.WriteLine($"║ ├─[Price] {product.UnitPrice}@1");
+                Console.WriteLine($"║ └─[Stock] {product.QuantityAvailable}");
+            }
+            Console.WriteLine($"╚══[{results.SuggestedProducts.Count} PRODUCTS]════════════════");
+        }
+
+        private static async Task ProductDetails()
+        {
+            var partSearch = new PartSearchApi();
+            var results = await partSearch.ProductDetails("478-1114-1-ND");
+
+            Console.WriteLine($"╔══[{results.ManufacturerPartNumber.ToUpper()}]══════════════════════════════════");
+            Console.WriteLine(results);
+        }
+
+        private static async Task Manufacturers()
+        {
+            var partSearch = new PartSearchApi();
+            var result = await partSearch.Manufacturers();
+
+            Console.WriteLine("╔══[MANUFACTURERS]══════════════════════════════════");
+
+            var lastManufacurer = result.Manufacturers.Last();
+
+            foreach (var manufacturer in result.Manufacturers.OrderBy(m => m.Id))
+            {
+                Console.WriteLine($"╠═[{manufacturer.Id}] {manufacturer.Name}");
+
+                if (manufacturer == lastManufacurer)
+                    Console.WriteLine($"╚══[{result.Manufacturers.Count} MANUFACTURERS]════════════════");
+                else
+                    Console.WriteLine("║");
+            }
+        }
+
+        private static async Task KeywordSearch()
+        {
+            List<int> taxonomy = new List<int>();
+            taxonomy.Add(60);
+
+            var filters = new Filters(taxonomy);
+
+            var sort = new SortParameters(SortOption.SortByQuantityAvailable, SortDirection.Descending, 0);
+
+            var searchOptions = new List<SearchOption>();
+            searchOptions.Add(SearchOption.ExcludeNonStock);
+            searchOptions.Add(SearchOption.InStock);
+            searchOptions.Add(SearchOption.CollapsePackagingTypes);
+
+            var partSearch = new PartSearchApi();
+
+            var results = await partSearch.KeywordSearch(new KeywordSearchRequest()
+            {
+                RecordCount = 50,
+                RecordStartPosition = 0,
+                ExcludeMarketPlaceProducts = true,
+                Filters = filters,
+                Sort = sort,
+                SearchOptions = searchOptions
+            });
+
+            Console.WriteLine($"Product Count: {results.ProductsCount}");
+            Console.WriteLine("╔══[PRODUCTS]══════════════════════════════════");
+            foreach (var result in results.Products)
+            {
+                Console.WriteLine($"╠═[{result.DigiKeyPartNumber}] {result.Manufacturer.Value} - {result.ManufacturerPartNumber}");
+                Console.WriteLine($"║ ├─[Desc]  {result.ProductDescription}");
+                Console.WriteLine($"║ ├─[Price] {result.UnitPrice}@1");
+                Console.WriteLine($"║ └─[Stock] {result.QuantityAvailable}");
+            }
+            Console.WriteLine($"╚══[{results.Products.Count} PRODUCTS]════════════════");
         }
 
         private static async Task Categories()
