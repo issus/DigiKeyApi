@@ -36,7 +36,7 @@ namespace DigiKey.Api.Model
         /// <param name="requestedQuantity">The quantity of the product you are looking to purchase. This is used with the SortByUnitPrice SortOption as price  varies at differing quantities..</param>
         /// <param name="searchOptions">Filters the search results by the included SearchOption..</param>
         /// <param name="excludeMarketPlaceProducts">Used to exclude MarkPlace products from search results. Default is false.</param>
-        public KeywordSearchRequest(string keywords = default(string), int? recordCount = default(int?), int? recordStartPosition = default(int?), Filters filters = default(Filters), SortParameters sort = default(SortParameters), int? requestedQuantity = default(int?), List<SearchOption> searchOptions = default(List<SearchOption>), bool? excludeMarketPlaceProducts = default(bool?))
+        public KeywordSearchRequest(string keywords = "", int? recordCount = default(int?), int? recordStartPosition = default(int?), Filters filters = default(Filters), SortParameters sort = default(SortParameters), int? requestedQuantity = default(int?), List<SearchOption> searchOptions = default(List<SearchOption>), bool? excludeMarketPlaceProducts = default(bool?))
         {
             this.Keywords = keywords;
             this.RecordCount = recordCount;
