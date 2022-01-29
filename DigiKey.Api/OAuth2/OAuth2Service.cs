@@ -18,6 +18,7 @@ using RestSharp;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DigiKey.Api.OAuth2
 {
@@ -40,7 +41,9 @@ namespace DigiKey.Api.OAuth2
         /// <returns>string which is the oauth2 authorization url.</returns>
         public string GenerateAuthUrl(string scopes = "", string state = null)
         {
-            var url = $"{ApiClientConfig.AuthorizationEndpoint}?client_id={ApiClientConfig.Instance.ClientId}&scope={scopes}&redirect_uri={ApiClientConfig.Instance.RedirectUri}&response_type=code";
+            string baseAddress = ApiClientConfig.Instance.BaseAddress.EndsWith("/") ? ApiClientConfig.Instance.BaseAddress.TrimEnd('/') : ApiClientConfig.Instance.BaseAddress;
+            
+            var url = $"{baseAddress}{ApiClientConfig.AuthorizationEndpoint}?client_id={ApiClientConfig.Instance.ClientId}&scope={scopes}&redirect_uri={HttpUtility.UrlEncode(ApiClientConfig.Instance.RedirectUri)}&response_type=code";
 
             if (!string.IsNullOrWhiteSpace(state))
             {

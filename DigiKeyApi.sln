@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		apiclient.config = apiclient.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiKey.Api.OAuth2ConsoleClient", "DigiKey.Api.OAuth2ConsoleClient\DigiKey.Api.OAuth2ConsoleClient.csproj", "{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{1CA5B6F3-EDAE-4D12-90F9-CEEA2B221747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CA5B6F3-EDAE-4D12-90F9-CEEA2B221747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CA5B6F3-EDAE-4D12-90F9-CEEA2B221747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
