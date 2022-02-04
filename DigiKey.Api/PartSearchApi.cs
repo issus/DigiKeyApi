@@ -58,7 +58,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("Categories", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<CategoriesResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -97,7 +97,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("CategoriesById", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<Category>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -146,7 +146,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("DigiReelPricing", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<DigiReelPricingDto>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -192,7 +192,8 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("KeywordSearch", response);
-                if (exception != null) throw exception;
+                
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<KeywordSearchResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -231,7 +232,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("ManufacturerProductDetails", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<ProductDetailsResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -264,7 +265,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("Manufacturers", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<ManufacturersResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -303,7 +304,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("ProductDetails", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<ProductDetails>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -342,7 +343,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("SuggestedParts", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<ProductWithSuggestions>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),

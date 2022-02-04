@@ -18,6 +18,10 @@ namespace DigiKey.Api.Client
     /// </summary>
     public partial class ApiClient
     {
+        public delegate void ApiCallCompletedEventHandler(RestRequest request, RestResponse response);
+
+        public event ApiCallCompletedEventHandler ApiCallCompleted;
+
         private static Lazy<ApiClient> lazyInstance = new Lazy<ApiClient>(() => new ApiClient());
 
         public static ApiClient Instance
@@ -32,6 +36,7 @@ namespace DigiKey.Api.Client
         public LocaleLanguage? LocaleLanguage { get; set; }
         public LocaleCurrency? LocaleCurrency { get; set; }
         public string CustomerId { get; set; }
+        public bool ThrowRateLimitExceptions { get; set; } = false;
 
         /// <summary>
         /// Number of requests the ApiClient has made since instantiation. 
@@ -61,19 +66,6 @@ namespace DigiKey.Api.Client
         {
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
         };
-
-        /// <summary>
-        /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(RestRequest request);
-
-        /// <summary>
-        /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
-        /// </summary>
-        /// <param name="request">The RestSharp request object</param>
-        /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(RestRequest request, RestResponse response);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
@@ -182,9 +174,8 @@ namespace DigiKey.Api.Client
 
             RequestCount++;
 
-            InterceptRequest(request);
             var response = await RestClient.ExecuteAsync(request);
-            InterceptResponse(request, response);
+            ApiCallCompleted?.Invoke(request, response);
 
             try
             {
@@ -246,9 +237,9 @@ namespace DigiKey.Api.Client
                         request.AddHeader(staleToken, staleToken);
                         request.AddOrUpdateHeader("Authorization", "Bearer " + ParameterToString(ApiClientConfig.Instance.AccessToken));
 
-                        InterceptRequest(request);
                         response = await RestClient.ExecuteAsync(request);
-                        InterceptResponse(request, response);
+
+                        ApiCallCompleted?.Invoke(request, response);
                     }
                     else
                     {

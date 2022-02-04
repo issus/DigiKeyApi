@@ -55,7 +55,7 @@ namespace DigiKey.Api
             if (ApiClient.ExceptionFactory != null)
             {
                 Exception exception = ApiClient.ExceptionFactory("CategoriesById", response);
-                if (exception != null) throw exception;
+                if (exception != null && !(statusCode == 429 && !ApiClient.Instance.ThrowRateLimitExceptions)) throw exception;
             }
 
             return new ApiResponse<PcnResponse>(statusCode, response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),

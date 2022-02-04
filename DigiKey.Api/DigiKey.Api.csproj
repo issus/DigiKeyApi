@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Authors>Mark Harris</Authors>
     <Company>Original Circuit Limited</Company>
     <Description>API Client for Digi-Key V3.</Description>
