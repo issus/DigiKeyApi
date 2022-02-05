@@ -36,7 +36,7 @@ You do not need to explicitly load the config file, it will look for it and read
 ```csharp
 using System;
 using System.Diagnostics;
-using DigiKey.Api
+using DigiKey.Api;
 using DigiKey.Api.Client;
 using DigiKey.Api.Model;
 
@@ -85,7 +85,7 @@ The ApiClientConfig.Instance needs to be before any other ApiClientConfig or API
 ```csharp
 using System;
 using System.Diagnostics;
-using DigiKey.Api
+using DigiKey.Api;
 using DigiKey.Api.Client;
 using DigiKey.Api.Model;
 
@@ -132,7 +132,7 @@ namespace Example
 
 The library contains an event you can subscribe to which will give you the request and response objects if you want to log them for debugging or testing purposes.
 
-```
+```csharp
 // Subscribe to API call completed
 ApiClient.Instance.ApiCallCompleted += (request, response) =>
 {
@@ -143,7 +143,7 @@ ApiClient.Instance.ApiCallCompleted += (request, response) =>
 
 ## Keyword Search
 Here's a complete example keyword search which will bring up the first 50 results from a category.
-```
+```csharp
 var partSearch = new PartSearchApi();
 
 List<int> taxonomy = new List<int>();
@@ -178,7 +178,7 @@ If you hit the burst or daily rate limit, you can wait until you can make reques
 
 Rather than hit the rate limit, you can check how many requests you have remaining with the `ApiClient.Instance.RateLimitRemaining` property. This does not indicate burst limits.
 
-```
+```csharp
 if (ApiClient.Instance.BurstLimited != null)
 {
     Console.WriteLine($"Burst Rate limited on {crawlCategory.CategoryName}. Resume in {ApiClient.Instance.BurstLimited.Reset}.");
