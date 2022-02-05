@@ -1,4 +1,4 @@
-# IO.Swagger.Model.LimitedTaxonomy
+# DigiKey.Api.Model.LimitedTaxonomy
 ## Properties
 
 Name | Type | Description | Notes

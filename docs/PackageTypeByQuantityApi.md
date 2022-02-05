@@ -1,4 +1,4 @@
-# IO.Swagger.Api.PackageTypeByQuantityApi
+# DigiKey.Api.Api.PackageTypeByQuantityApi
 
 All URIs are relative to *https://api.digikey.com/PackageTypeByQuantity/v3*
 
@@ -17,9 +17,9 @@ Provide a part number and quantity to receive product information such as pricin
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {

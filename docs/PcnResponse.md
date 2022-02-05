@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PcnResponse
+# DigiKey.Api.Model.PcnResponse
 ## Properties
 
 Name | Type | Description | Notes

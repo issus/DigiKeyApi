@@ -1,4 +1,4 @@
-# IO.Swagger.Model.LimitedParameter
+# DigiKey.Api.Model.LimitedParameter
 ## Properties
 
 Name | Type | Description | Notes

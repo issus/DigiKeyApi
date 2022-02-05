@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PriceBreak
+# DigiKey.Api.Model.PriceBreak
 ## Properties
 
 Name | Type | Description | Notes

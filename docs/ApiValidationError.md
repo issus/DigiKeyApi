@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ApiValidationError
+# DigiKey.Api.Model.ApiValidationError
 ## Properties
 
 Name | Type | Description | Notes

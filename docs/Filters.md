@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Filters
+# DigiKey.Api.Model.Filters
 ## Properties
 
 Name | Type | Description | Notes

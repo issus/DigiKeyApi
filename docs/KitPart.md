@@ -1,4 +1,4 @@
-# IO.Swagger.Model.KitPart
+# DigiKey.Api.Model.KitPart
 ## Properties
 
 Name | Type | Description | Notes

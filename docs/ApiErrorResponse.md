@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ApiErrorResponse
+# DigiKey.Api.Model.ApiErrorResponse
 ## Properties
 
 Name | Type | Description | Notes

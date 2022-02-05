@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SearchOption
+# DigiKey.Api.Model.SearchOption
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.RecommendedProductsCollection
+# DigiKey.Api.Model.RecommendedProductsCollection
 ## Properties
 
 Name | Type | Description | Notes

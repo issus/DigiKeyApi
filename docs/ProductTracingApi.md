@@ -1,4 +1,4 @@
-# IO.Swagger.Api.ProductTracingApi
+# DigiKey.Api.Api.ProductTracingApi
 
 All URIs are relative to *https://api.digikey.com/ProductTracing/v1*
 
@@ -17,9 +17,9 @@ Retrieve detailed information about the product being traced
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {

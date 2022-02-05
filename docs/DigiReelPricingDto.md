@@ -1,4 +1,4 @@
-# IO.Swagger.Model.DigiReelPricingDto
+# DigiKey.Api.Model.DigiReelPricingDto
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.MediaLinks
+# DigiKey.Api.Model.MediaLinks
 ## Properties
 
 Name | Type | Description | Notes

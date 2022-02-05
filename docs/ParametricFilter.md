@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ParametricFilter
+# DigiKey.Api.Model.ParametricFilter
 ## Properties
 
 Name | Type | Description | Notes

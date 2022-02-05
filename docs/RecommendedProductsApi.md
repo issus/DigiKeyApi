@@ -1,4 +1,4 @@
-# IO.Swagger.Api.RecommendedProductsApi
+# DigiKey.Api.Api.RecommendedProductsApi
 
 All URIs are relative to *https://api.digikey.com*
 
@@ -17,9 +17,9 @@ Returns a list of recommended products for the given part number.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {

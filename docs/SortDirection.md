@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SortDirection
+# DigiKey.Api.Model.SortDirection
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.KeywordSearchRequest
+# DigiKey.Api.Model.KeywordSearchRequest
 ## Properties
 
 Name | Type | Description | Notes

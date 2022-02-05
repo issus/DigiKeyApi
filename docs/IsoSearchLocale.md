@@ -1,4 +1,4 @@
-# IO.Swagger.Model.IsoSearchLocale
+# DigiKey.Api.Model.IsoSearchLocale
 ## Properties
 
 Name | Type | Description | Notes

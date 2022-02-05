@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PidVid
+# DigiKey.Api.Model.PidVid
 ## Properties
 
 Name | Type | Description | Notes

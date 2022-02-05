@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ValuePair
+# DigiKey.Api.Model.ValuePair
 ## Properties
 
 Name | Type | Description | Notes

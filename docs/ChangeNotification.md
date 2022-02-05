@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ChangeNotification
+# DigiKey.Api.Model.ChangeNotification
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Api.PartSearchApi
+# DigiKey.Api.Api.PartSearchApi
 
 All URIs are relative to *https://api.digikey.com/Search/v3*
 
@@ -24,9 +24,9 @@ Returns all Product Categories. Category Id can be used in KeywordSearchRequest.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -100,9 +100,9 @@ Returns Category for given Id. Category Id can be used in KeywordSearchRequest.F
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -178,9 +178,9 @@ Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuan
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -260,9 +260,9 @@ KeywordSearch can search for any product in the Digi-Key catalog.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -340,9 +340,9 @@ Create list of ProductDetails from the matches of the requested manufacturer pro
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -420,9 +420,9 @@ Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchR
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -498,9 +498,9 @@ Works best with a Digi-Key part number. Some manufacturer part numbers conflict 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {
@@ -580,9 +580,9 @@ Works best with a Digi-Key part number. Some manufacturer part numbers conflict 
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {

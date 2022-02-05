@@ -1,4 +1,4 @@
-# IO.Swagger.Api.PcnApi
+# DigiKey.Api.Api.PcnApi
 
 All URIs are relative to *https://api.digikey.com/ChangeNotifications/v3*
 
@@ -17,9 +17,9 @@ This returns all change notifications for the given DigiKey product.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using DigiKey.Api.Api;
+using DigiKey.Api.Client;
+using DigiKey.Api.Model;
 
 namespace Example
 {

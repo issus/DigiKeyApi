@@ -1,4 +1,4 @@
-# IO.Swagger.Model.PackageTypeByQuantityResponse
+# DigiKey.Api.Model.PackageTypeByQuantityResponse
 ## Properties
 
 Name | Type | Description | Notes

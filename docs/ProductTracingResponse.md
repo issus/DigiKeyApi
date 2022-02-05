@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ProductTracingResponse
+# DigiKey.Api.Model.ProductTracingResponse
 ## Properties
 
 Name | Type | Description | Notes

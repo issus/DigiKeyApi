@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AssociatedProduct
+# DigiKey.Api.Model.AssociatedProduct
 ## Properties
 
 Name | Type | Description | Notes

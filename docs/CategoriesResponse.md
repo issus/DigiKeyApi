@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CategoriesResponse
+# DigiKey.Api.Model.CategoriesResponse
 ## Properties
 
 Name | Type | Description | Notes
