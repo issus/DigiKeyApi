@@ -80,7 +80,7 @@ namespace Example
 
 You can create your own `IApiClientConfigHelper` to load a configuration from a database or other source.
 
-The ApiClientConfig.Instance needs to be before any other ApiClientConfig or API class is called.
+The ApiClientConfig.Instance needs to be set before any other ApiClientConfig or API class is called.
 
 ```csharp
 using System;
@@ -130,7 +130,7 @@ namespace Example
 
 ## Logging API Calls
 
-The library contains an event you can subscribe to which will give you the request and response objects if you want to log them for debugging or testing purposes.
+The library contains an event you can subscribe to, which will give you the request and response objects if you want to log them for debugging or testing purposes.
 
 ```csharp
 // Subscribe to API call completed
