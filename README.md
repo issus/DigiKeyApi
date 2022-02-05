@@ -181,14 +181,14 @@ Rather than hit the rate limit, you can check how many requests you have remaini
 ```csharp
 if (ApiClient.Instance.BurstLimited != null)
 {
-    Console.WriteLine($"Burst Rate limited on {crawlCategory.CategoryName}. Resume in {ApiClient.Instance.BurstLimited.Reset}.");
+    Console.WriteLine($"Burst Rate limited. Resume in {ApiClient.Instance.BurstLimited.Reset}.");
 
     await Task.Delay((ApiClient.Instance.BurstLimited.Reset * 1000) + 2000);
 }
 
 if (ApiClient.Instance.RateLimited != null)
 {
-    Console.WriteLine($"Daily Rate limited on {crawlCategory.CategoryName}. Resume after {ApiClient.Instance.RateLimited.ResetTime} GMT.");
+    Console.WriteLine($"Daily Rate limited. Resume after {ApiClient.Instance.RateLimited.ResetTime} GMT.");
 
     await Task.Delay((ApiClient.Instance.RateLimited.RetryAfter * 1000) + 60000);
 }
