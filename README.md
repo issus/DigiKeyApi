@@ -161,11 +161,12 @@ searchOptions.Add(SearchOption.InStock);
 searchOptions.Add(SearchOption.CollapsePackagingTypes); // doesn't seem to do anything
 
 // run search
+int recordCount = 50;
 var results = await partSearch.KeywordSearch(new KeywordSearchRequest()
 {
     Keywords = "", // add your keywords here
-    RecordCount = 50,
-    RecordStartPosition = page, // 0 based page number
+    RecordCount = recordCount,
+    RecordStartPosition = page * recordCount, // 0 based page number
     ExcludeMarketPlaceProducts = true,
     Filters = filters,
     Sort = sort,
