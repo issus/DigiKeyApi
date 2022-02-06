@@ -198,7 +198,7 @@ namespace DigiKey.Api.Client
                 {
                     Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "Retry-After").Value, out int retryAfter);
                     Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-Reset").Value, out int rlReset);
-                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-ResetTime").Value, out DateTime rlResetTime);
+                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-RateLimit-ResetTime").Value, null, System.Globalization.DateTimeStyles.AdjustToUniversal, out DateTime rlResetTime);
 
                     RateLimited = new RateLimit(retryAfter, rateLimit, rateRemaining, rlReset, rlResetTime);
                 }
@@ -213,7 +213,7 @@ namespace DigiKey.Api.Client
                     Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Limit").Value, out int blLimit);
                     Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Remaining").Value, out int blRemaining);
                     Int32.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-Reset").Value, out int rlReset);
-                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-ResetTime").Value, out DateTime rlResetTime);
+                    DateTime.TryParse((string)response.Headers.FirstOrDefault(h => h.Name == "X-BurstLimit-ResetTime").Value, null, System.Globalization.DateTimeStyles.AdjustToUniversal, out DateTime rlResetTime);
 
                     BurstLimited = new RateLimit(retryAfter, blLimit, blRemaining, rlReset, rlResetTime);
                 }
