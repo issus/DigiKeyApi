@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// The validated locale that was used for the search. If the provided locale was invalid, this will show the corrections.

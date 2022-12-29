@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using DigiKey.Api.Client;
-using DigiKey.Api.Model;
+using OriginalCircuit.DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Model;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

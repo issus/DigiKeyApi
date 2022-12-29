@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// Response for list Manufacturer Product Details

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using DigiKey.Api.Client;
-using DigiKey.Api.Model;
+using OriginalCircuit.DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Model;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     
 
@@ -27,7 +27,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns a list of recommended products for the given part number. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The part being searched for</param>
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
@@ -49,7 +49,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns a list of recommended products for the given part number. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The part being searched for</param>
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
@@ -95,7 +95,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The part being searched for</param>
         /// <returns>RecommendedProductsResponse</returns>
         Task<RecommendedProductsResponse> RecommendedProducts(string digiKeyPartNumber);
@@ -106,7 +106,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The part being searched for</param>
         /// <returns>ApiResponse of RecommendedProductsResponse</returns>
         Task<ApiResponse<RecommendedProductsResponse>> RecommendedProductsWithHttpInfo(string digiKeyPartNumber);

@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// Combination of a parameter Id and Value Id. Used for filtering search results.

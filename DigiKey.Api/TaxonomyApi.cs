@@ -1,12 +1,12 @@
 
-using DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Client;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints

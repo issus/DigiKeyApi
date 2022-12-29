@@ -1,5 +1,5 @@
-using DigiKey.Api.Configuration;
-using DigiKey.Api.OAuth2;
+using OriginalCircuit.DigiKey.Api.Configuration;
+using OriginalCircuit.DigiKey.Api.OAuth2;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -170,7 +170,7 @@ namespace DigiKey.Api.Client
             request.AddHeader("Content-Type", "application/json");
 
             // set user agent
-            RestClientOptions.UserAgent = "github.com/issus/DigiKey.Api/1.0.0";
+            RestClientOptions.UserAgent = "github.com/issus/OriginalCircuit.DigiKey.Api/1.0.0";
 
             RequestCount++;
 

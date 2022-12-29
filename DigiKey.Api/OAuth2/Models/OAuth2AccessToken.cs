@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace DigiKey.Api.OAuth2.Models
+namespace OriginalCircuit.DigiKey.Api.OAuth2.Models
 {
     public class OAuth2AccessToken
     {

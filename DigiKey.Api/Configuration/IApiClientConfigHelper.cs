@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DigiKey.Api.Configuration
+namespace OriginalCircuit.DigiKey.Api.Configuration
 {
     public interface IApiClientConfigHelper
     {

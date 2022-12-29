@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Configuration;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace DigiKey.Api.Configuration
+namespace OriginalCircuit.DigiKey.Api.Configuration
 {
 
     /// <summary>
@@ -80,14 +81,11 @@ namespace DigiKey.Api.Configuration
                 config.Save(ConfigurationSaveMode.Full);
                 ConfigurationManager.RefreshSection("appSettings");
             }
-            catch (ConfigurationErrorsException cee)
-            {
-                //_log.DebugFormat($"Exception Message {cee.Message}");
-                throw;
-            }
             catch (System.Exception ex)
             {
-                //_log.DebugFormat($"Exception Message {ex.Message}");
+#if DEBUG
+                Debug.WriteLine($"Exception Message {ex.Message}");
+#endif
                 throw;
             }
         }

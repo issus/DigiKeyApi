@@ -11,8 +11,8 @@
 // 
 //-----------------------------------------------------------------------
 
-using DigiKey.Api.Configuration;
-using DigiKey.Api.OAuth2.Models;
+using OriginalCircuit.DigiKey.Api.Configuration;
+using OriginalCircuit.DigiKey.Api.OAuth2.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -20,7 +20,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace DigiKey.Api.OAuth2
+namespace OriginalCircuit.DigiKey.Api.OAuth2
 {
     /// <summary>
     /// OAuth2Service accepts ApiApiClientConfigHelper.Instance to use to initialize and finish an OAuth2 Authorization and 

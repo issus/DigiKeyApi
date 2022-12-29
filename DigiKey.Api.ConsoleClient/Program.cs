@@ -1,13 +1,12 @@
-﻿using DigiKey.Api.Client;
-using DigiKey.Api.Configuration;
-using DigiKey.Api.OAuth2;
+﻿using OriginalCircuit.DigiKey.Api.Configuration;
+using OriginalCircuit.DigiKey.Api.Model;
+using OriginalCircuit.DigiKey.Api.OAuth2;
 using System;
-using System.Threading.Tasks;
-using System.Linq;
-using DigiKey.Api.Model;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DigiKey.Api.ConsoleClient
+namespace OriginalCircuit.DigiKey.Api.ConsoleClient
 {
     class Program
     {
@@ -30,9 +29,9 @@ namespace DigiKey.Api.ConsoleClient
             }
 
             //await Categories();
-            await KeywordSearch();
+            //await KeywordSearch();
             //await Manufacturers();
-            //await ProductDetails();
+            await ProductDetails();
             //await SuggestedParts();
             //await Taxonomy();
 

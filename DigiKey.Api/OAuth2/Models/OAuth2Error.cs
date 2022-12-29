@@ -13,7 +13,7 @@
 
 using Newtonsoft.Json;
 
-namespace DigiKey.Api.OAuth2.Models
+namespace OriginalCircuit.DigiKey.Api.OAuth2.Models
 {
     public class OAuth2Error
     {

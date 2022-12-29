@@ -1,18 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigiKey.Api", "DigiKey.Api\DigiKey.Api.csproj", "{66A18BE7-9C90-4BE7-B4C9-998992FD052C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OriginalCircuit.DigiKey.Api", "DigiKey.Api\OriginalCircuit.DigiKey.Api.csproj", "{66A18BE7-9C90-4BE7-B4C9-998992FD052C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiKey.Api.ConsoleClient", "DigiKey.Api.ConsoleClient\DigiKey.Api.ConsoleClient.csproj", "{1CA5B6F3-EDAE-4D12-90F9-CEEA2B221747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OriginalCircuit.DigiKey.Api.ConsoleClient", "DigiKey.Api.ConsoleClient\OriginalCircuit.DigiKey.Api.ConsoleClient.csproj", "{1CA5B6F3-EDAE-4D12-90F9-CEEA2B221747}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2C1ECF76-0818-4F8A-B877-B89AFAA0D49B}"
 	ProjectSection(SolutionItems) = preProject
 		apiclient.config = apiclient.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiKey.Api.OAuth2ConsoleClient", "DigiKey.Api.OAuth2ConsoleClient\DigiKey.Api.OAuth2ConsoleClient.csproj", "{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OriginalCircuit.DigiKey.Api.OAuth2ConsoleClient", "DigiKey.Api.OAuth2ConsoleClient\OriginalCircuit.DigiKey.Api.OAuth2ConsoleClient.csproj", "{8AEA09FD-E613-45E0-89CA-9D3262BE46E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

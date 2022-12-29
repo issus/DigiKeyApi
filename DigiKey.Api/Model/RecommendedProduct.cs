@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// The recommended product based on the submitted DigiKeyPartNumber.

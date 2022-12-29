@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// Response model for a keyword search request.

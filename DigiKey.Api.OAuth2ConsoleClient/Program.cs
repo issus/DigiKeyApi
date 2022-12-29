@@ -1,5 +1,5 @@
-﻿using DigiKey.Api.Configuration;
-using DigiKey.Api.OAuth2;
+﻿using OriginalCircuit.DigiKey.Api.Configuration;
+using OriginalCircuit.DigiKey.Api.OAuth2;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace DigiKey.Api.OAuth2ConsoleClient
+namespace OriginalCircuit.DigiKey.Api.OAuth2ConsoleClient
 {
     class Program
     {

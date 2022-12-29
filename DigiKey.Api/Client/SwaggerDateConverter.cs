@@ -10,7 +10,7 @@
 
 using Newtonsoft.Json.Converters;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     /// <summary>
     /// Formatter for 'date' swagger formats ss defined by full-date - RFC3339

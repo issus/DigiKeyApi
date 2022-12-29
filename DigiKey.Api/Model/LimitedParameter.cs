@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// Parameters for filtering that are limited to parameters for the products in the response.

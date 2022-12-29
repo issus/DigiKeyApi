@@ -1,12 +1,12 @@
-using DigiKey.Api.Client;
-using DigiKey.Api.Model;
+using OriginalCircuit.DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Model;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -23,7 +23,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns all Product Categories. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
@@ -40,7 +40,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns all Product Categories. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <param name="xDIGIKEYLocaleSite">Two letter code for Digi-Key product website to search on. Different countries sites have different part restrictions, supported languages, and currencies. Acceptable values include: US, CA, JP, UK, DE, AT, BE, DK, FI, GR, IE, IT, LU, NL, NO, PT, ES, KR, HK, SG, CN, TW, AU, FR, IN, NZ, SE, MX, CH, IL, PL, SK, SI, LV, LT, EE, CZ, HU, BG, MY, ZA, RO, TH, PH.(optional)</param>
@@ -68,7 +68,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns Category for given Id. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
         /// <returns>Category</returns>
         public async Task<Category> CategoriesById(int? categoryId)
@@ -80,7 +80,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns Category for given Id. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
         /// <returns>ApiResponse of Category</returns>
         public async Task<ApiResponse<Category>> CategoriesByIdWithHttpInfo(int? categoryId)
@@ -107,7 +107,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuantity 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
         /// <returns>DigiReelPricingDto</returns>
@@ -120,7 +120,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuantity 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
         /// <returns>ApiResponse of DigiReelPricingDto</returns>
@@ -156,7 +156,7 @@ namespace DigiKey.Api
         /// <summary>
         /// KeywordSearch can search for any product in the Digi-Key catalog. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">(optional)</param>
         /// <returns>KeywordSearchResponse</returns>
         public async Task<KeywordSearchResponse> KeywordSearch(KeywordSearchRequest body = null)
@@ -168,7 +168,7 @@ namespace DigiKey.Api
         /// <summary>
         /// KeywordSearch can search for any product in the Digi-Key catalog. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="authorization">OAuth Bearer Token. Please see&lt;a href&#x3D; \&quot;https://developer.digikey.com/documentation/oauth\&quot; target&#x3D; \&quot;_blank\&quot; &gt; OAuth 2.0 Documentation &lt;/a &gt; page for more info.</param>
         /// <param name="xDIGIKEYClientId">The Client Id for your App.</param>
         /// <param name="includes">(optional)</param>
@@ -203,7 +203,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Create list of ProductDetails from the matches of the requested manufacturer product name. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ProductDetailsResponse</returns>
         public async Task<ProductDetailsResponse> ManufacturerProductDetails(ManufacturerProductDetailsRequest body = null)
@@ -215,7 +215,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Create list of ProductDetails from the matches of the requested manufacturer product name. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ApiResponse of ProductDetailsResponse</returns>
         public async Task<ApiResponse<ProductDetailsResponse>> ManufacturerProductDetailsWithHttpInfo(ManufacturerProductDetailsRequest body = null)
@@ -242,7 +242,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchRequest.Filters.ManufacturerIds to restrict a keyword search to a given Manufacturer 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ManufacturersResponse</returns>
         public async Task<ManufacturersResponse> Manufacturers()
         {
@@ -253,7 +253,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchRequest.Filters.ManufacturerIds to restrict a keyword search to a given Manufacturer 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ManufacturersResponse</returns>
         public async Task<ApiResponse<ManufacturersResponse>> ManufacturersWithHttpInfo()
         {
@@ -275,7 +275,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Retrieve detailed product information including real time pricing and availability. Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
         /// <returns>ProductDetails</returns>
         public async Task<ProductDetails> ProductDetails(string digiKeyPartNumber)
@@ -287,7 +287,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Retrieve detailed product information including real time pricing and availability. Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
         /// <returns>ApiResponse of ProductDetails</returns>
         public async Task<ApiResponse<ProductDetails>> ProductDetailsWithHttpInfo(string digiKeyPartNumber)
@@ -314,7 +314,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Retrieve detailed product information and two suggested products Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
         /// <returns>ProductWithSuggestions</returns>
         public async Task<ProductWithSuggestions> SuggestedParts(string partNumber)
@@ -326,7 +326,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Retrieve detailed product information and two suggested products Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
         /// <returns>ApiResponse of ProductWithSuggestions</returns>
         public async Task<ApiResponse<ProductWithSuggestions>> SuggestedPartsWithHttpInfo(string partNumber)
@@ -362,7 +362,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>CategoriesResponse</returns>
         Task<CategoriesResponse> Categories();
 
@@ -372,7 +372,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of CategoriesResponse</returns>
         Task<ApiResponse<CategoriesResponse>> CategoriesWithHttpInfo();
         /// <summary>
@@ -381,7 +381,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
         /// <returns>Category</returns>
         Task<Category> CategoriesById(int? categoryId);
@@ -392,7 +392,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
         /// <returns>ApiResponse of Category</returns>
         Task<ApiResponse<Category>> CategoriesByIdWithHttpInfo(int? categoryId);
@@ -402,7 +402,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
         /// <returns>DigiReelPricingDto</returns>
@@ -414,7 +414,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The Digi-Key PartNumber requested for Digi-Reel price calculation. It must be a  Digi-Key part number that is for a Digi-Reel pack type.</param>
         /// <param name="requestedQuantity">The quantity of the product you are looking to create a Digi-Reel with. Must be greater  than 0.</param>
         /// <returns>ApiResponse of DigiReelPricingDto</returns>
@@ -425,7 +425,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">(optional)</param>
         /// <returns>KeywordSearchResponse</returns>
         Task<KeywordSearchResponse> KeywordSearch(KeywordSearchRequest body = null);
@@ -436,7 +436,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">(optional)</param>
         /// <returns>ApiResponse of KeywordSearchResponse</returns>
         Task<ApiResponse<KeywordSearchResponse>> KeywordSearchWithHttpInfo(KeywordSearchRequest body = null);
@@ -446,7 +446,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ProductDetailsResponse</returns>
         Task<ProductDetailsResponse> ManufacturerProductDetails(ManufacturerProductDetailsRequest body = null);
@@ -457,7 +457,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">ManufacturerProductDetailsRequest(optional)</param>
         /// <returns>ApiResponse of ProductDetailsResponse</returns>
         Task<ApiResponse<ProductDetailsResponse>> ManufacturerProductDetailsWithHttpInfo(ManufacturerProductDetailsRequest body = null);
@@ -467,7 +467,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ManufacturersResponse</returns>
         Task<ManufacturersResponse> Manufacturers();
 
@@ -477,7 +477,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ManufacturersResponse</returns>
         Task<ApiResponse<ManufacturersResponse>> ManufacturersWithHttpInfo();
         /// <summary>
@@ -486,7 +486,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
         /// <returns>ProductDetails</returns>
         Task<ProductDetails> ProductDetails(string digiKeyPartNumber);
@@ -497,7 +497,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">The product to retrieve details for.</param>
         /// <returns>ApiResponse of ProductDetails</returns>
         Task<ApiResponse<ProductDetails>> ProductDetailsWithHttpInfo(string digiKeyPartNumber);
@@ -507,7 +507,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
         /// <returns>ProductWithSuggestions</returns>
         Task<ProductWithSuggestions> SuggestedParts(string partNumber);
@@ -518,7 +518,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// Works best with a Digi-Key part number. Some manufacturer part numbers conflict with unrelated parts and may not  return the correct product.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States.
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="partNumber">The product to retrieve details for.</param>
         /// <returns>ApiResponse of ProductWithSuggestions</returns>
         Task<ApiResponse<ProductWithSuggestions>> SuggestedPartsWithHttpInfo(string partNumber);

@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// PriceBreak of a product. Note that all pricing when keyword searching is cached catalog pricing.

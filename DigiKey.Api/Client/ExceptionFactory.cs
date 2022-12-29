@@ -12,7 +12,7 @@
 using RestSharp;
 using System;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

@@ -1,4 +1,4 @@
-﻿using DigiKey.Api.Client;
+﻿using OriginalCircuit.DigiKey.Api.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,7 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace DigiKey.Api.Configuration
+namespace OriginalCircuit.DigiKey.Api.Configuration
 {
     public class ApiClientConfig : ConfigurationHelper, IApiClientConfigHelper
     {
@@ -32,7 +32,7 @@ namespace DigiKey.Api.Configuration
                 searchPaths.Add(Directory.GetCurrentDirectory());
                 searchPaths.Add(Directory.GetParent(baseDir).FullName);
                 searchPaths.Add(Directory.GetParent(baseDir).Parent.Parent.FullName);
-                ///DigiKeyApi\DigiKey.Api.ConsoleClient\bin\Debug\netcoreapp3.1\
+                ///DigiKeyApi\OriginalCircuit.DigiKey.Api.ConsoleClient\bin\Debug\netcoreapp3.1\
                 searchPaths.Add(Directory.GetParent(baseDir).Parent.Parent.Parent.FullName);
 
                 string apiConfigPath = null;

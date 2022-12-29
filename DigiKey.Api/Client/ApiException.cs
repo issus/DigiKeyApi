@@ -10,7 +10,7 @@
 
 using System;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     /// <summary>
     /// API Exception

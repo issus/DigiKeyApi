@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     public class RateLimit
     {

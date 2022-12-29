@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using DigiKey.Api.Client;
-using DigiKey.Api.Model;
+using OriginalCircuit.DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Model;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -25,7 +25,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Provide a part number and quantity to receive product information such as pricing, available quantity, and the best  packaging type for the requested quantity of the product.  For example, given a requested quantity larger than a standard reel, this will return information about the  standard tape and reel as well as either cut tape or DKR depending on the provided preference.  Made for Cut Tape, Tape and Reel, and Digi-Reel products only. Other packaging types can be searched for, but  results may vary.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">A part number. Can be either Digi-Key or Manufacturer, but some manufacturer part  numbers are ambiguous and will not be found. A DKR part number will override a CT packagingPreference.</param>
         /// <param name="requestedQuantity">The quantity of the product that you are interested in. This will be used to determined  the quantity to purchase in standard tape and reel, and also in your part preference for the remainder.</param>
         /// <returns>PackageTypeByQuantityResponse</returns>
@@ -38,7 +38,7 @@ namespace DigiKey.Api
         /// <summary>
         /// Provide a part number and quantity to receive product information such as pricing, available quantity, and the best  packaging type for the requested quantity of the product.  For example, given a requested quantity larger than a standard reel, this will return information about the  standard tape and reel as well as either cut tape or DKR depending on the provided preference.  Made for Cut Tape, Tape and Reel, and Digi-Reel products only. Other packaging types can be searched for, but  results may vary.  Locale information is required in the headers for accurate pricing and currencies. Locale defaults to United  States. 
         /// </summary>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">A part number. Can be either Digi-Key or Manufacturer, but some manufacturer part  numbers are ambiguous and will not be found. A DKR part number will override a CT packagingPreference.</param>
         /// <param name="requestedQuantity">The quantity of the product that you are interested in. This will be used to determined  the quantity to purchase in standard tape and reel, and also in your part preference for the remainder.</param>
         /// <returns>ApiResponse of PackageTypeByQuantityResponse</returns>
@@ -82,7 +82,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">A part number. Can be either Digi-Key or Manufacturer, but some manufacturer part  numbers are ambiguous and will not be found. A DKR part number will override a CT packagingPreference.</param>
         /// <param name="requestedQuantity">The quantity of the product that you are interested in. This will be used to determined  the quantity to purchase in standard tape and reel, and also in your part preference for the remainder.</param>
         /// <returns>Task of PackageTypeByQuantityResponse</returns>
@@ -94,7 +94,7 @@ namespace DigiKey.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="OriginalCircuit.DigiKey.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="digiKeyPartNumber">A part number. Can be either Digi-Key or Manufacturer, but some manufacturer part  numbers are ambiguous and will not be found. A DKR part number will override a CT packagingPreference.</param>
         /// <param name="requestedQuantity">The quantity of the product that you are interested in. This will be used to determined  the quantity to purchase in standard tape and reel, and also in your part preference for the remainder.</param>
         /// <returns>Task of ApiResponse (PackageTypeByQuantityResponse)</returns>

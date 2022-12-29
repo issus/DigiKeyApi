@@ -1,9 +1,9 @@
-using DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Client;
 using RestSharp;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api
+namespace OriginalCircuit.DigiKey.Api
 {
     public enum LocaleSite
     {

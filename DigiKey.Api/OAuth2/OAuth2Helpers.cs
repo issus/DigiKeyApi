@@ -11,16 +11,16 @@
 // 
 //-----------------------------------------------------------------------
 
-using DigiKey.Api.Client;
-using DigiKey.Api.Configuration;
-using DigiKey.Api.OAuth2.Models;
+using OriginalCircuit.DigiKey.Api.Client;
+using OriginalCircuit.DigiKey.Api.Configuration;
+using OriginalCircuit.DigiKey.Api.OAuth2.Models;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace DigiKey.Api.OAuth2
+namespace OriginalCircuit.DigiKey.Api.OAuth2
 {
     /// <summary>
     /// Helper functions for OAuth2Service class and other classes calling OAuth2Service functions

@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// This DTO takes the input from the V3 KeywordSearch and creates the Search2.0 request

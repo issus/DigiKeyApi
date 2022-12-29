@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DigiKey.Api.Client
+namespace OriginalCircuit.DigiKey.Api.Client
 {
     /// <summary>
     /// API Response

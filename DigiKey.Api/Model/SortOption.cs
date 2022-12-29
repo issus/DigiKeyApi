@@ -13,7 +13,7 @@ using Newtonsoft.Json.Converters;
 using System.Runtime.Serialization;
 
 
-namespace DigiKey.Api.Model
+namespace OriginalCircuit.DigiKey.Api.Model
 {
     /// <summary>
     /// SortOption enum
